@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage products</title>
+    <style>
+        a{text-decoration: none; color: black; }
+        a:hover{color: cadetblue;}
+        table{
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        td{
+            border: 0.5px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<center>
+<body>
+    <h3><a href="/">ATN Toys Store</a></h3>
+    <h3><a href="/add">Add product</a></h3>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Picture</td>
+            <td></td>
+        </tr>
+        <tr>
+            {{#each data}}
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td><img src="{{picture}}" alt="toys" width="150" height="130"><br></td>
+            <td>
+                <a href="/delete?id={{_id}}"><input type="submit" value="Delete"></a>
+                <a href="/update?id={{_id}}"><input type="submit" value="Update"></a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+</center>
+</html>
