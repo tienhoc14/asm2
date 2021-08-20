@@ -1,0 +1,33 @@
+body {
+    max-width: 800px;
+    padding: 0% 23%;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.menu div {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: cadetblue;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+#product {
+    display: inline-block;
+    padding: 30px
+}

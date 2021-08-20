@@ -5,24 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
-    <style>
-        a{text-decoration: none; color: black; }
-        a:hover{color: cadetblue;}
-        h1{text-align: center;text-decoration: none; color: black}
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body style="max-width: 800px; padding: 0% 23%">
+<body>
     <h1><a href="/">ATN Toys Store</a></h1>
-    <div>
-        <a href="/login">Login</a>
-    </div>
-    <div>
+    <div class="menu">
         <form action="/search" method="POST">
             <input type="text" name="txtSearch">
             <input type="submit" value="Search">
         </form>
+        <div><a href="/login">Login</a></div>
+    </div>
+    <div>
         {{#each data}}
-        <div style="display: inline-block; padding: 30px">
+        <div id="product">
             <img src="{{picture}}" alt="toys" width="200" height="250"><br>
             <center>{{name}} - {{price}}$</center>
         </div>

@@ -1,0 +1,19 @@
+#manage a {
+    text-decoration: none;
+    color: black;
+}
+
+#manage a:hover {
+    color: cadetblue;
+}
+
+#manage table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#manage td {
+    border: 0.5px solid black;
+    text-align: center;
+    padding: 8px;
+}

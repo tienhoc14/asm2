@@ -8,6 +8,8 @@ const url = 'mongodb+srv://atn_store:Engrisk1234@cluster0.6pxwq.mongodb.net/test
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
 
+app.use(express.static('public'))
+
 app.use(session({
     resave: true,
     saveUninitialized: true,
