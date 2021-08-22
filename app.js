@@ -92,14 +92,14 @@ app.get('/manage_products', checkLogin, async(req, res) => {
     const dbo = await getDB()
     const allProducts = await dbo.collection('products').find({}).toArray();
 
-    res.render("manage_products", { data: allProducts });
+    res.render("manage_products", { data: allProducts, auth: req.session['User'] });
 })
 
 app.get('/', async(req, res) => {
     const dbo = await getDB()
     const allProducts = await dbo.collection('products').find({}).toArray();
 
-    res.render("index", { data: allProducts, auth: req.session['User'] });
+    res.render("index", { data: allProducts });
 })
 
 const PORT = process.env.PORT || 5000;
