@@ -14,7 +14,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
     secret: "tienhoc14",
-    cookie: { maxAge: 600000 }
+    cookie: { maxAge: 12000000 }
 }))
 
 app.get('/login', (req, res) => {
@@ -29,7 +29,7 @@ app.post('/doLogin', (req, res) => {
     if (user == 'admin' && pass == '123') {
         console.log('Login successful')
         req.session['User'] = {
-            user: 'admin'
+            role: 'admin'
         }
     }
     res.redirect('manage_products');
@@ -91,6 +91,10 @@ app.get('/add', checkLogin, (req, res) => {
 app.get('/manage_products', checkLogin, async(req, res) => {
     const dbo = await getDB()
     const allProducts = await dbo.collection('products').find({}).toArray();
+
+    for (let i = 0; i < allProducts.length; i++) {
+        allProducts[i].vat = 0.1 * allProducts[i].price;
+    }
 
     res.render("manage_products", { data: allProducts, auth: req.session['User'] });
 })

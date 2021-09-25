@@ -15,6 +15,7 @@
         <tr>
             <td>Name</td>
             <td>Price</td>
+            <td>VAT</td>
             <td>Picture</td>
             <td></td>
         </tr>
@@ -22,6 +23,7 @@
             {{#each data}}
             <td>{{name}}</td>
             <td>{{price}}</td>
+            <td>{{vat}}</td>
             <td><img src="{{picture}}" alt="toys" width="150" height="130"><br></td>
             <td>
                 <a href="/delete?id={{_id}}"><input type="submit" value="Delete"></a>
