@@ -14,7 +14,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
     secret: "tienhoc14",
-    cookie: { maxAge: 600000 }
+    cookie: { maxAge: 12000000 }
 }))
 
 app.get('/login', (req, res) => {
